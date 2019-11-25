@@ -1,9 +1,6 @@
 (ns kit-web.core
   (:use [compojure.route :only [files not-found]]
         [compojure.core :only [defroutes GET POST DELETE ANY context]]
-        ;; [ring.middleware
-        ;;  params keyword-params nested-params ;; multipart-params
-        ;;  cookies session flash]
         )
   (:require
    [ring.middleware.reload :as reload]
@@ -23,5 +20,3 @@
                   #'all-routes)]
     (run-server handler {:port 8080})))
 
-;; (defn -main [& args]
-;;   (run-server #'all-routes {:port 8080}))
